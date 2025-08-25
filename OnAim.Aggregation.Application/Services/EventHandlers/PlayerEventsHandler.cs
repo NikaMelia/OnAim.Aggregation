@@ -86,7 +86,9 @@ public class PlayerEventsHandler : ICapSubscribe
                 AccumulatedAmount = @event.Amount,
                 TotalPoints = 0,
             };
-            await _aggregationResultsRepository.Add(result);
+            result = await _aggregationResultsRepository.Add(result);
+            result =  await _amountAggregator.AggregateAmount(result, configuration, 0);
+            await _aggregationResultsRepository.Update(result);
             return;
         }
 

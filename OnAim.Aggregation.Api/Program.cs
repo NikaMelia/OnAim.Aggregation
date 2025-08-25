@@ -23,7 +23,7 @@ builder.Services.AddScoped<IEventBus, CapEventBus>();
 builder.Services.AddSwaggerGen();
 builder.Services.AddPersistence(builder.Configuration);
 builder.Services.AddControllers();
-builder.Services.AddHostedService<StartupEventPublisher>();
+builder.Services.AddHostedService<StartupHostedService>();
 
 
 var app = builder.Build();

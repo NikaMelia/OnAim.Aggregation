@@ -6,6 +6,6 @@ public interface IAggregationResultsRepository
 {
     Task<AggregationResult?> GetByPlayerId(string playerId, string provider,
         string eventType);
-    Task Add(AggregationResult aggregationResult);
+    Task<AggregationResult> Add(AggregationResult aggregationResult);
     Task Update(AggregationResult aggregationResult);
 }

@@ -22,10 +22,11 @@ public class AggregationResultsRepository : IAggregationResultsRepository
             .FirstOrDefaultAsync();
     }
 
-    public async Task Add(AggregationResult aggregationResult)
+    public async Task<AggregationResult> Add(AggregationResult aggregationResult)
     {
-        _dbContext.AggregationResults.Add(aggregationResult);
+        var result = await _dbContext.AggregationResults.AddAsync(aggregationResult);
         await _dbContext.SaveChangesAsync();
+        return result.Entity;
     }
 
     public async Task Update(AggregationResult aggregationResult)
