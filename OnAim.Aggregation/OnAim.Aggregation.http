@@ -1,0 +1,6 @@
+@OnAim.Aggregation_HostAddress = http://localhost:5113
+
+GET {{OnAim.Aggregation_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
