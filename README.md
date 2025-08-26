@@ -142,4 +142,7 @@ flowchart LR
 - Configs live in Mongo; results in a relational DB for transactions and reporting.
 - Add Redis when you need dedupe/idempotency or hot counters.
 
+**Bonuse**
+- I think its better to talk about these questions on a meeting. 
+
 ---
